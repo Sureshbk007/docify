@@ -10,6 +10,14 @@ import TableHeader from "@tiptap/extension-table-header";
 import TableRow from "@tiptap/extension-table-row";
 import Image from "@tiptap/extension-image";
 import ImageResize from "tiptap-extension-resize-image";
+import Underline from "@tiptap/extension-underline";
+import FontFamily from "@tiptap/extension-font-family";
+import TextStyle from "@tiptap/extension-text-style";
+import { Color } from "@tiptap/extension-color";
+import Highlight from "@tiptap/extension-highlight";
+import Link from "@tiptap/extension-link";
+import TextAlign from "@tiptap/extension-text-align";
+
 import { useEditor, EditorContent } from "@tiptap/react";
 
 import { useEditorStore } from "@/store/use-editor-store";
@@ -60,6 +68,19 @@ export function Editor() {
       TableCell,
       Image,
       ImageResize,
+      Underline,
+      FontFamily,
+      TextStyle,
+      Color,
+      Highlight.configure({ multicolor: true }),
+      Link.configure({
+        openOnClick: true,
+        autolink: true,
+        defaultProtocol: "https",
+      }),
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
     ],
     content: `
        
