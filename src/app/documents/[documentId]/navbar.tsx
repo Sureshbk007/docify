@@ -36,6 +36,7 @@ import {
 import { MenubarMenu } from "@radix-ui/react-menubar";
 import { useEditorStore } from "@/store/use-editor-store";
 import { UserButton, OrganizationSwitcher } from "@clerk/nextjs";
+import { Avatars } from "./avatars";
 
 export function Navbar() {
   const { editor } = useEditorStore();
@@ -259,6 +260,7 @@ export function Navbar() {
         </div>
       </div>
       <div className="flex gap-3 items-center pl-6">
+        <Avatars />
         <OrganizationSwitcher
           afterCreateOrganizationUrl="/"
           afterLeaveOrganizationUrl="/"
